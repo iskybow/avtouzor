@@ -1,27 +1,10 @@
-'use strict';
+"use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Shared = function Shared() {
   _classCallCheck(this, Shared);
 };
-
-if (window.innerWidth > 769) {
-  var reSize = function reSize($target) {
-    var containerW = $('.container').width();
-    var windowW = $(window).width();
-    var sideMargin = (windowW - containerW) / 2;
-    $target.css('width', containerW - $('.footer > .contacts').width() + sideMargin + 'px');
-  };
-
-  $(document).ready(function () {
-    reSize($('.map-block'));
-  });
-
-  $(window).resize(function () {
-    reSize($('.map-block'));
-  });
-}
 
 $(".scroll").on("click", function (e) {
   var anchor = $(this);
@@ -46,10 +29,6 @@ if ($('.js_phone-mask').length > 0) {
 
 $('.js_modalWindow').fancybox({
   // Options will go here
-});
-
-$(document).on('click', '.js_showImg', function () {
-  $('.work-two').addClass('show-block');
 });
 
 // $(document).on('click', '.js_moreActive', function () {
@@ -83,5 +62,26 @@ $(document).click(function (event) {
   $('.more-info').removeClass('more-info-active');
   $('.service-item').removeClass('js_activeItem');
   event.stopPropagation();
+});
+
+if (window.innerWidth > 769) {
+  var reSize = function reSize($target) {
+    var containerW = $('.container').width();
+    var windowW = $(window).width();
+    var sideMargin = (windowW - containerW) / 2;
+    $target.css('width', containerW - $('.footer > .contacts').width() + sideMargin + 'px');
+  };
+
+  $(document).ready(function () {
+    reSize($('.map-block'));
+  });
+
+  $(window).resize(function () {
+    reSize($('.map-block'));
+  });
+}
+
+$(document).on('click', '.js_showImg', function () {
+  $('.work-two').addClass('show-block');
 });
 //# sourceMappingURL=script.js.map
