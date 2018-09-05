@@ -1,10 +1,27 @@
-"use strict";
+'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Shared = function Shared() {
   _classCallCheck(this, Shared);
 };
+
+if (window.innerWidth > 769) {
+  var reSize = function reSize($target) {
+    var containerW = $('.container').width();
+    var windowW = $(window).width();
+    var sideMargin = (windowW - containerW) / 2;
+    $target.css('width', containerW - $('.footer > .contacts').width() + sideMargin + 'px');
+  };
+
+  $(document).ready(function () {
+    reSize($('.map-block'));
+  });
+
+  $(window).resize(function () {
+    reSize($('.map-block'));
+  });
+}
 
 $(".scroll").on("click", function (e) {
   var anchor = $(this);
@@ -53,8 +70,13 @@ $('.js_modalWindow').fancybox({
 $(document).on('click', '.js_moreActive', function () {
   var parentItem = $(this).parents('.service-item');
   $('.more-info').removeClass('more-info-active');
-  parentItem.find('.more-info').toggleClass('more-info-active');
-  parentItem.addClass('js_activeItem');
+  if (parentItem.hasClass('js_activeItem')) {
+    parentItem.find('.more-info').removeClass('more-info-active');
+    $('.service-item').removeClass('js_activeItem');
+  } else {
+    parentItem.find('.more-info').addClass('more-info-active');
+    parentItem.addClass('js_activeItem');
+  }
 });
 
 $(document).click(function (event) {
@@ -63,23 +85,6 @@ $(document).click(function (event) {
   $('.service-item').removeClass('js_activeItem');
   event.stopPropagation();
 });
-
-if (window.innerWidth > 769) {
-  var reSize = function reSize($target) {
-    var containerW = $('.container').width();
-    var windowW = $(window).width();
-    var sideMargin = (windowW - containerW) / 2;
-    $target.css('width', containerW - $('.footer > .contacts').width() + sideMargin + 'px');
-  };
-
-  $(document).ready(function () {
-    reSize($('.map-block'));
-  });
-
-  $(window).resize(function () {
-    reSize($('.map-block'));
-  });
-}
 
 $(document).on('click', '.js_showImg', function () {
   $('.work-two').addClass('show-block');

@@ -20,8 +20,13 @@
 $(document).on('click', '.js_moreActive', function () {
   var parentItem =  $(this).parents('.service-item');
   $('.more-info').removeClass('more-info-active');
-  parentItem.find('.more-info').toggleClass('more-info-active');
-  parentItem.addClass('js_activeItem');
+  if (parentItem.hasClass('js_activeItem')){
+    parentItem.find('.more-info').removeClass('more-info-active');
+    $('.service-item').removeClass('js_activeItem');
+  } else {
+    parentItem.find('.more-info').addClass('more-info-active');
+    parentItem.addClass('js_activeItem');
+  }
 });
 
 $(document).click(function (event) {
