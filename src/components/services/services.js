@@ -29,6 +29,12 @@ $(document).on('click', '.js_moreActive', function () {
   }
 });
 
+$(document).on('click', '.close-more', function () {
+  var parentItem =  $(this).parents('.service-item');
+  parentItem.find('.more-info').removeClass('more-info-active');
+  $('.service-item').removeClass('js_activeItem');
+});
+
 $(document).click(function (event) {
   if ($(event.target).parents('.js_activeItem').length) return;
   $('.more-info').removeClass('more-info-active');
