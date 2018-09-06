@@ -51,16 +51,6 @@
   align-items: center
   justify-content: flex-end
 
-  & a
-    margin: 0
-    margin-right: 20px
-    margin-bottom: 5px
-    font-family: MullerRegular, sans-serif
-    font-size: 15px
-    color: #000000
-    text-decoration: underline
-    text-transform: uppercase
-
   &__head
     margin: 0
     position: relative
@@ -75,6 +65,20 @@
     right: -20px
     height: 25px
     border: 2px solid #000000
+
+.list-reviews
+  margin: 0
+  margin-right: 20px
+  margin-bottom: 5px
+  font-family: MullerRegular, sans-serif
+  font-size: 15px
+  color: #000000
+  text-decoration: underline
+  text-transform: uppercase
+  background: none
+  border: none
+  cursor: pointer
+  outline: none
 
 .reviews-item
   margin: 15px 0
@@ -115,6 +119,13 @@
     border-radius: 50%
     object-fit: cover
 
+.reviews-list-first, .reviews-list-two, .reviews-list-three
+  display: none
+
+.reviews-list-active
+  display: block
+
+
 @media (min-width: 600px)
   .reviews-item
     height: 180px
@@ -148,3 +159,13 @@
   .reviews-item-image
     top: -70px
     left: auto
+
+@media (max-width: 426px)
+  .reviews-head
+    flex-direction: column-reverse
+    text-align: center
+  .reviews-head__head:after
+    display: none
+  .reviews-head .list-reviews
+    margin-right: 0
+    margin-top: 15px
