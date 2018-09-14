@@ -48,31 +48,6 @@ $(document).on('click', '.js_modalThanks', function () {
   $('.modal-thanks').addClass('modal-active');
 });
 
-$(document).on('click', '.js_listTwo', function () {
-  $('.list-reviews').removeClass('js_listTwo');
-  $('.list-reviews').addClass('js_listThree');
-  $('.reviews-list-first').fadeOut(0);
-  $('.reviews-list-two').fadeIn();
-});
-
-$(document).on('click', '.js_listThree', function () {
-  $('.list-reviews').removeClass('js_listThree');
-  $('.list-reviews').addClass('js_listFirst');
-  $('.reviews-list-two').fadeOut(0);
-  $('.reviews-list-three').fadeIn();
-});
-
-$(document).on('click', '.js_listFirst', function () {
-  $('.list-reviews').removeClass('js_listFirst');
-  $('.list-reviews').addClass('js_listTwo');
-  $('.reviews-list-three').fadeOut(0);
-  $('.reviews-list-first').fadeIn();
-});
-
-$(document).on('click', '.js_showImg', function () {
-  $('.work-two').addClass('show-block');
-});
-
 // $(document).on('click', '.js_moreActive', function () {
 //   var parentItem =  $(this).parents('.service-item');
 //   $('.more-info').removeClass('more-info-active');
@@ -115,5 +90,30 @@ $(document).click(function (event) {
   $('.more-info').removeClass('more-info-active');
   $('.service-item').removeClass('js_activeItem');
   event.stopPropagation();
+});
+
+$(document).on('click', '.js_listTwo', function () {
+  $('.list-reviews').removeClass('js_listTwo');
+  $('.list-reviews').addClass('js_listThree');
+  $('.reviews-list-first').fadeOut(0);
+  $('.reviews-list-two').fadeIn();
+});
+
+$(document).on('click', '.js_listThree', function () {
+  $('.list-reviews').removeClass('js_listThree');
+  $('.list-reviews').addClass('js_listFirst');
+  $('.reviews-list-two').fadeOut(0);
+  $('.reviews-list-three').fadeIn();
+});
+
+$(document).on('click', '.js_listFirst', function () {
+  $('.list-reviews').removeClass('js_listFirst');
+  $('.list-reviews').addClass('js_listTwo');
+  $('.reviews-list-three').fadeOut(0);
+  $('.reviews-list-first').fadeIn();
+});
+
+$(document).on('click', '.js_showImg', function () {
+  $('.work-two').addClass('show-block');
 });
 //# sourceMappingURL=script.js.map
