@@ -5,7 +5,7 @@ mixin footer()
         +b.contacts
           +b.flogo
             +b('a')(href='#header').flogo-src.scroll
-              +e('img')(src='assets/images/logo.png', width='auto', height='124').flogo
+              +e('img')(src='assets/images/logo.png', width='124', height='124').flogo
             +b('ul').fmenu-item
               +b('li').fitem
                 +b('a')(href='#services').fmenu-item-a.scroll Услуги
@@ -23,7 +23,7 @@ mixin footer()
                 +b.fmail-phone-image
                   +b('i').fas.fa-phone
                 +b.phone-block
-                  +e('p').nphone 8 (812) 319 36 02
+                  +e('a')(href='tel:88123193602').nphone 8 (812) 319 36 02
               +b.fmail
                 +b.fmail-phone-image
                   +b('i').fas.fa-at
@@ -32,6 +32,7 @@ mixin footer()
               +e('p') Мы в соц. сетях:
                 +b('a')(href='https://vk.com/avtouzor', target='_blank').fab.fa-vk
                 +b('a')(href='https://www.facebook.com/avtouzor', target='_blank').fab.fa-facebook-f
+                +b('a')(href='https://www.instagram.com/avtouzor/', target='_blank').fab.fa-instagram
         +b.map
           +b('iframe')(src="https://yandex.ru/map-widget/v1/?um=constructor%3A0ed45f9d527abf23ffef6652ed67d3b84a6a6092ec489ca93293d02a415130dd&amp;source=constructor" height="300" frameborder="0" style="border:0" allowfullscreen).map-block
     +e('img')(src='assets/images/smoke_footer.png', heith='550').fsmoke

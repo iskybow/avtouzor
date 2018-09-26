@@ -3,7 +3,7 @@ mixin header()
     +e('img')(src='assets/images/smoke.png').smoke
     +b.container
       +b.nav-menu
-        +e('img')(src='assets/images/logo.png', width='auto', height='124').logo
+        +e('img')(src='assets/images/logo.png', width='124', height='124').logo
         +b('ul').menu-item
           +b('li').item
             +b('a')(href='#services').menu-item-a.scroll услуги
@@ -20,7 +20,7 @@ mixin header()
             +b.mail-phone-image
               +b('i').fas.fa-phone
             +b.phone-block
-              +e('p').nphone 8 (812) 319 36 02
+              +e('a')(href='tel:88123193602').nphone 8 (812) 319 36 02
       +b.banner
         +b.banner-text
           +e('h2') Оклейка автомобилей
